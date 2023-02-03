@@ -19,7 +19,7 @@ interface Props {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
-const title = `${SITE.title} - ${post.data.title}`;
+const title = `${post.data.title} · ${SITE.title}`;
 ---
 
 <Layout title={title}>
