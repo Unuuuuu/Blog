@@ -4,12 +4,14 @@ import Header from "./Header.astro";
 import Main from "./Main.astro";
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 import "../styles/index.css";
+import GoogleAnalytics from "./GoogleAnalytics.astro";
 
 const { title } = Astro.props;
 ---
 
 <html lang="ko" class="text-fg-default bg-bg-default">
   <head>
+    <GoogleAnalytics />
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
