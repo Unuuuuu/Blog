@@ -9,6 +9,7 @@ const postsCollection = defineCollection({
         z.literal("typescript"),
         z.literal("react"),
         z.literal("markdown"),
+        z.literal("web"),
       ]),
       date: z.date(),
     })
