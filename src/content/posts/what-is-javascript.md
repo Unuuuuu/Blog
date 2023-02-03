@@ -25,4 +25,4 @@ date: 2023-02-03T17:07:02+09:00
 
 ### Resources
 
-- https://javascript.info/intro
+- https://javascript.info/intro#what-is-javascript

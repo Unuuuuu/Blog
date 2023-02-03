@@ -22,7 +22,8 @@ module.exports = {
         javascript: "#f1e05a",
         typescript: "#3178C6",
         react: "#61DAFB",
-        markdown: "#ffffff",
+        markdown: "#FCB32C",
+        web: "#ffffff",
       },
       fontFamily: {
         sans: [

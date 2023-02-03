@@ -1,10 +1,10 @@
 ---
-title: Markdown Style Guide
+title: 마크다운 스타일 가이드
 category: markdown
 date: 2023-02-03T16:34:01+09:00
 ---
 
-## Headings
+### Headings
 
 # Heading level 1
 
@@ -18,16 +18,16 @@ date: 2023-02-03T16:34:01+09:00
 
 ###### Heading level 6
 
-## Paragraphs
+### Paragraphs
 
 I really like using Markdown.
 
-## Line Breaks
+### Line Breaks
 
 This is the first line.  
 And this is the second line.
 
-## Emphasis
+### Emphasis
 
 **Bold**
 
@@ -35,7 +35,7 @@ _Italic_
 
 **_Bold and Italic_**
 
-## Blockquotes
+### Blockquotes
 
 > Dorothy followed her through many of the beautiful rooms in her castle.
 
@@ -47,7 +47,7 @@ _Italic_
 >
 > > The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
 
-## Lists
+### Lists
 
 1. First item
 2. Second item
@@ -66,7 +66,7 @@ _Italic_
    - Indented item
 4. Fourth item
 
-## Code
+### Code
 
 `inline`
 
@@ -80,14 +80,14 @@ _Italic_
 console.log("hi");
 ```
 
-## Horizontal Rules
+### Horizontal Rules
 
 ---
 
-## Links
+### Links
 
 My favorite search engine is [Duck Duck Go](https://duckduckgo.com).
 
-## Images
+### Images
 
 ![favicon](/favicon.svg "Favicon")
