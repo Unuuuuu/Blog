@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCategoryData } from "../utils";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const categoryData = getCategoryData(post.data.category);
+---
+
+<div class="flex gap-2 items-center text-xs text-fg-muted">
+  <div class="flex gap-1 items-center">
+    <span
+      class={`rounded-full w-[12px] h-[12px] border border-border-contrast inline-block ${categoryData.bgColor}`}
+    ></span>
+    <span>{categoryData.displayName}</span>
+  </div>
+  <span>·</span>
+  <time datetime={post.data.date.toISOString()}>
+    {
+      new Intl.DateTimeFormat("ko-KR", { dateStyle: "long" }).format(
+        post.data.date
+      )
+    }
+  </time>
+</div>
