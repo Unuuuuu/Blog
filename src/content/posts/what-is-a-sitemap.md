@@ -12,6 +12,10 @@ date: 2023-02-03T21:07:15+09:00
 - 사이트맵의 이미지 항목은 이미지의 위치를 포함할 수 있습니다.
 - 사이트맵의 뉴스 항목은 기사 제목과 발행일을 포함할 수 있습니다.
 
+### Related Posts
+
+- [사이트맵은 필요한가?](./do-i-need-a-sitemap)
+
 ### Resources
 
 - https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
