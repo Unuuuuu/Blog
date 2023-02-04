@@ -18,4 +18,4 @@ date: 2023-02-03T21:07:15+09:00
 
 ### Resources
 
-- https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
+- https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview?hl=en

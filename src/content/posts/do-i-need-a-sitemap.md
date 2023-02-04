@@ -20,7 +20,7 @@ date: 2023-02-04T14:11:49+09:00
 다음과 같은 경우에 사이트맵이 필요하지 않을 수 있습니다.
 
 - **사이트가 작은 경우**  
-  작다는 것은 사이트에 있는 페이지가 대략 500개 이하임을 의미합니다. (검색 결과에 포함될 필요가 있는 사이트들만을 종합합니다.)
+  작다는 것은 사이트에 있는 페이지가 대략 500개 이하임을 의미합니다. (검색 결과에 포함될 필요가 있는 페이지들만을 종합합니다.)
 - **내부적으로 철저히 연결된 경우**  
   이것은 구글이 홈페이지에서부터 시작해 링크를 따라가면서 사이트의 중요한 페이지들을 모두 찾을 수 있다는 것을 의미합니다.
 - 검색 결과에 표시하려는 **미디어 콘텐츠(비디오, 이미지)나 뉴스 페이지가 많지 않은 경우**  
@@ -32,4 +32,4 @@ date: 2023-02-04T14:11:49+09:00
 
 ### Resources
 
-- https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview#do-i-need-a-sitemap
+- https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview?hl=en#do-i-need-a-sitemap
