@@ -8,6 +8,10 @@ import GoogleAnalytics from "./GoogleAnalytics.astro";
 import Giscus from "./Giscus.astro";
 
 const { title } = Astro.props;
+const generator = Astro.generator;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL("/images/preview.png", Astro.url);
+const description = "Unuuuuu의 블로그입니다.";
 ---
 
 <html lang="ko" class="text-fg-default bg-bg-default">
@@ -17,8 +21,15 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content={generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:locale" content="ko_KR" />
   </head>
   <body>
     <Header />
