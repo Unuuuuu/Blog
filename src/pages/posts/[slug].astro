@@ -28,8 +28,11 @@ const title = `${post.data.title} · ${SITE.title}`;
       <h2 class="text-2xl font-semibold mb-2">{post.data.title}</h2>
       <CategoryAndDate post={post} />
     </div>
-    <article class="prose max-w-none p-4">
-      <Content />
-    </article>
+    <div class="p-4">
+      <article class="prose max-w-none">
+        <Content />
+      </article>
+      <div class="giscus mt-4"></div>
+    </div>
   </div>
 </Layout>
