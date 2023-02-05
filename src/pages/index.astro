@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import CategoryAndDate from "../components/CategoryAndDate.astro";
-import Layout from "../components/Layout.astro";
-import { SITE } from "../constants";
-import { getSortedPostsByDate } from "../utils";
+import CategoryAndDate from "@src/components/CategoryAndDate.astro";
+import Layout from "@src/components/Layout.astro";
+import { SITE } from "@src/constants";
+import { getSortedPostsByDate } from "@src/utils";
 
 const posts = await getCollection("posts");
 const sortedPostsByDate = getSortedPostsByDate(posts);
