@@ -1,0 +1,17 @@
+---
+import CategorySelect from "@src/components/CategorySelect";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <div class="mb-4">
+    <CategorySelect client:idle />
+  </div>
+  <slot />
+</BaseLayout>

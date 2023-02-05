@@ -1,10 +1,14 @@
 ---
-import Footer from "./Footer.astro";
-import Header from "./Header.astro";
-import Main from "./Main.astro";
+import Footer from "@src/components/Footer.astro";
+import Header from "@src/components/Header.astro";
+import Main from "@src/components/Main.astro";
+import GoogleAnalytics from "@src/components/GoogleAnalytics.astro";
+import Giscus from "@src/components/Giscus.astro";
 import "@src/styles/index.css";
-import GoogleAnalytics from "./GoogleAnalytics.astro";
-import Giscus from "./Giscus.astro";
+
+interface Props {
+  title: string;
+}
 
 const { title } = Astro.props;
 const generator = Astro.generator;

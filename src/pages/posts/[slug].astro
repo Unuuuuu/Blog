@@ -1,8 +1,8 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 import CategoryAndDate from "@src/components/CategoryAndDate.astro";
-import Layout from "@src/components/Layout.astro";
 import { SITE } from "@src/constants";
+import BaseLayout from "@src/layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -22,7 +22,7 @@ const { Content } = await post.render();
 const title = `${post.data.title} · ${SITE.title}`;
 ---
 
-<Layout title={title}>
+<BaseLayout title={title}>
   <div class="bg-bg-default border border-border-default rounded-md">
     <div class="p-4 border-b border-border-default">
       <h2 class="text-2xl font-semibold mb-2">{post.data.title}</h2>
@@ -35,4 +35,4 @@ const title = `${post.data.title} · ${SITE.title}`;
       <div class="giscus mt-4"></div>
     </div>
   </div>
-</Layout>
+</BaseLayout>

@@ -1,33 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import CategoryAndDate from "@src/components/CategoryAndDate.astro";
-import Layout from "@src/components/Layout.astro";
 import { SITE } from "@src/constants";
-import { getSortedPostsByDate } from "@src/utils";
+import PostList from "@src/components/PostList.astro";
+import PostsLayout from "@src/layouts/PostsLayout.astro";
 
 const posts = await getCollection("posts");
-const sortedPostsByDate = getSortedPostsByDate(posts);
 const title = `Home · ${SITE.title}`;
 ---
 
-<Layout title={title}>
-  <ul class="flex flex-col gap-4">
-    {
-      sortedPostsByDate.map((post) => {
-        return (
-          <li class="p-4 bg-bg-default border border-border-default rounded-md list-none">
-            <h2 class="mb-2">
-              <a
-                href={`/posts/${post.slug}`}
-                class="text-2xl text-accent-fg hover:underline font-semibold"
-              >
-                {post.data.title}
-              </a>
-            </h2>
-            <CategoryAndDate post={post} />
-          </li>
-        );
-      })
-    }
-  </ul>
-</Layout>
+<PostsLayout title={title}>
+  <PostList posts={posts} />
+</PostsLayout>
