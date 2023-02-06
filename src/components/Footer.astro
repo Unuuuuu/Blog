@@ -1,11 +1,20 @@
 ---
 import { SITE } from "@src/constants";
+import { MarkGithubIcon } from "@primer/octicons-react";
 ---
 
 <footer class="border-t border-border-default">
-  <div class="max-w-3xl mx-auto px-4 py-4">
+  <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
     <span class="text-xs text-fg-muted">
       © 2023 {SITE.title}. All Rights Reserved.
     </span>
+    <a
+      class="text-fg-subtle flex"
+      href="https://github.com/Unuuuuu"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <MarkGithubIcon size={24} client:only />
+    </a>
   </div>
 </footer>

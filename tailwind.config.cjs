@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         "fg-default": "#adbac7",
         "fg-muted": "#768390",
+        "fg-subtle": "#636e7b",
         "bg-default": "#22272e",
         "bg-inset": "#1c2128",
         "bg-subtle": "#2d333b",
