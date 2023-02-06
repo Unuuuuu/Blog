@@ -1,21 +1,12 @@
 import { getCategoryData } from "@src/utils";
-import { CollectionEntry, getCollection } from "astro:content";
-import { useEffect, useState } from "react";
+import type { CollectionEntry } from "astro:content";
 
-const CategorySelect = () => {
-  const [options, setOptions] = useState<
-    CollectionEntry<"posts">["data"]["category"][]
-  >([]);
+interface CategorySelectProps {
+  categories: CollectionEntry<"posts">["data"]["category"][];
+}
 
-  useEffect(() => {
-    const setInitialOptions = async () => {
-      const posts = await getCollection("posts");
-      const categories = [...new Set(posts.map((post) => post.data.category))];
-      setOptions(categories);
-    };
-
-    setInitialOptions();
-  }, []);
+const CategorySelect: React.FC<CategorySelectProps> = (props) => {
+  const { categories } = props;
 
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
     const origin = window.location.origin;
@@ -39,9 +30,9 @@ const CategorySelect = () => {
           카테고리
         </option>
         <option value="all">All</option>
-        {options.map((option) => (
-          <option value={option} key={option}>
-            {getCategoryData(option).displayName}
+        {categories.map((category) => (
+          <option value={category} key={category}>
+            {getCategoryData(category).displayName}
           </option>
         ))}
       </select>

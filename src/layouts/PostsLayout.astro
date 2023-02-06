@@ -1,5 +1,6 @@
 ---
 import CategorySelect from "@src/components/CategorySelect";
+import { getCollection } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
@@ -7,11 +8,13 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const posts = await getCollection("posts");
+const categories = [...new Set(posts.map((post) => post.data.category))];
 ---
 
 <BaseLayout title={title}>
   <div class="mb-4">
-    <CategorySelect client:idle />
+    <CategorySelect categories={categories} client:idle />
   </div>
   <slot />
 </BaseLayout>
