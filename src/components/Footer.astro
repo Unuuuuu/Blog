@@ -1,6 +1,6 @@
 ---
 import { SITE } from "@src/constants";
-import { MarkGithubIcon } from "@primer/octicons-react";
+import { ReactComponent as GithubMark } from "@src/assets/images/github-mark.svg";
 ---
 
 <footer class="border-t border-border-default">
@@ -13,8 +13,9 @@ import { MarkGithubIcon } from "@primer/octicons-react";
       href="https://github.com/Unuuuuu"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Learn more about Unuuuuu on Github"
     >
-      <MarkGithubIcon size={24} client:only />
+      <GithubMark />
     </a>
   </div>
 </footer>

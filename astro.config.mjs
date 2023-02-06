@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import customGithubDarkDimmedTheme from "./custom-github-dark-dimmed.json";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
+import svgr from "vite-plugin-svgr";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,5 +17,8 @@ export default defineConfig({
   },
   server: {
     host: true,
+  },
+  vite: {
+    plugins: [svgr()],
   },
 });
