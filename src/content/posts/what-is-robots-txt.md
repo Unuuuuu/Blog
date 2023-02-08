@@ -1,10 +1,10 @@
 ---
 title: robots.txt는 무엇인가?
 category: web
-date: 2023-02-08T17:21:15+09:00
+date: 2023-02-08T21:53:49+09:00
 ---
 
-robots.txt 파일은 사이트에서 크롤러가 접근할 수 있는 URL을 검색 엔진 크롤러에게 알려줍니다. 요청으로 사이트가 과부하되는 것을 막기 위해 주로 사용됩니다. 이 파일은 웹 페이지가 구글에 표시되는 것을 막기 위해 사용되는 방법이 아닙니다. 구글에 표시되는 것을 막기 위해서는 [`noindex` 로 색인 생성을 막거나](https://developers.google.com/search/docs/crawling-indexing/block-indexing?hl=en) 페이지를 비밀번호로 보호해야 합니다.
+robots.txt 파일은 사이트에서 크롤러가 접근할 수 있는 URL을 검색 엔진 크롤러에게 알려줍니다. 요청으로 사이트가 과부하되는 것을 막기 위해 주로 사용됩니다. 이 파일은 웹 페이지가 구글에 표시되는 것을 막기 위한 방법이 아닙니다. 구글에 표시되는 것을 막기 위해서는 [`noindex` 로 색인 생성을 막거나](https://developers.google.com/search/docs/crawling-indexing/block-indexing?hl=en) 페이지를 비밀번호로 보호해야 합니다.
 
 ### robots.txt의 용도는 무엇인가?
 
