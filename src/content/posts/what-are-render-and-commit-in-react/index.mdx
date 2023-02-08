@@ -24,14 +24,14 @@ import Clock from "./Clock.jsx?raw";
 2. 컴포넌트를 렌더링합니다. (주방에서 요리를 준비합니다.)
 3. DOM에 커밋합니다. (테이블에 요리를 놓습니다.)
 
-### Step 1: Trigger a render
+### 단계 1: 렌더링을 트리거합니다.
 
 컴포넌트는 다음의 두 가지 경우에 렌더링합니다.
 
 1. 컴포넌트의 초기에 렌더링합니다.
 2. 컴포넌트 자신이나 조상 컴포넌트 중 하나가 가지고 있는 state가 업데이트되었을 때 렌더링합니다.
 
-#### Initial render
+#### 초기 렌더링
 
 앱이 시작되면 초기 렌더링을 트리거해야 합니다. 이것은 타겟 DOM 노드와 함께 `createRoot` 를 호출한 다음, 컴포넌트와 함께 `render` 메소드를 호출하는 것으로 수행됩니다.
 
@@ -43,11 +43,11 @@ const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-#### Re-renders when state updates
+#### state 업데이트 시 발생하는 리렌더링
 
 컴포넌트가 초기에 렌더링되고 나면, [`set` 함수](https://beta.reactjs.org/reference/react/useState#setstate)를 이용해 state를 업데이트하는 것으로 추가 렌더링을 트리거할 수 있습니다. 컴포넌트의 state를 업데이트하면 자동으로 렌더링이 대기열에 추가됩니다.
 
-### Step 2: React renders your components
+### 단계 2: 리액트가 컴포넌트를 렌더링합니다.
 
 렌더링을 트리거한 이후에, 리액트는 무엇을 화면에 표시할지 알아내기 위해 컴포넌트를 호출합니다. **"렌더링"은 리액트가 컴포넌트를 호출하는 것입니다.**
 
@@ -68,7 +68,7 @@ root.render(<App />);
 - 초기 렌더링을 하는 동안, 리액트는 `<article>`, `<h1>`, 그리고 세 개의 `<p>` 태그에 대한 [DOM 노드를 생성](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)합니다.
 - 리렌더링을 하는 동안, 리액트는 이전 렌더링 이후 변경된 속성이 있다면 그것이 어떤 속성인지 계산합니다. 그런데, 다음 단계인 커밋 단계가 될 때까지 그 정보를 가지고 아무 일도 하지는 않습니다.
 
-### Step 3: React commits changes to the DOM
+### 단계 3: 리액트가 DOM에 변경 사항을 커밋합니다.
 
 컴포넌트를 렌더링(호출)한 이후에, 리액트는 DOM을 수정합니다.
 
@@ -86,7 +86,7 @@ root.render(<App />);
 
 이 단계에서 리액트는 새로운 `time` 을 가지고 `<h1>` 의 내용만 업데이트하기 때문에 이처럼 동작합니다. `<input>` 이 JSX에서 지난번과 같은 위치에 나타나는 것을 확인하기 때문에, 리액트는 `<input>` 또는 그 값을 건드리지 않습니다.
 
-### Epilogue: Browser paint
+### 에필로그: 브라우저가 패인트합니다.
 
 렌더링이 끝난 이후에 리액트는 DOM을 업데이트하고, 브라우저는 화면을 리패인트합니다. 이 프로세스는 "브라우저 렌더링"이라고 합니다.
 

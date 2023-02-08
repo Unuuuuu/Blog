@@ -87,7 +87,7 @@ console.log(x); // 1;
 foo(); // ReferenceError: foo is not defined
 ```
 
-### Examples
+### 예시
 
 #### for문의 body에서 블록문 사용하기
 
