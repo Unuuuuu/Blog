@@ -4,7 +4,9 @@ category: react
 date: 2023-02-08T00:59:02+09:00
 ---
 
-import Clock from "./Clock.jsx";
+import Sandpack from "@src/components/Sandpack.tsx";
+import Article from "./Article.jsx?raw";
+import Clock from "./Clock.jsx?raw";
 
 컴포넌트는 화면에 표시되기 전에 리액트에 의해 반드시 렌더링되어야 합니다.  
 이 프로세스를 이해하면 작성한 코드가 어떻게 실행될지 생각하고, 실행 동작을 설명하는 데 도움이 될 것입니다.
@@ -54,36 +56,16 @@ root.render(<App />);
 
 이 프로세스는 반복적입니다. 업데이트된 컴포넌트가 어떤 다른 컴포넌트를 반환하고 있다면, 리액트는 그 컴포넌트를 다음으로 렌더링합니다. 그리고 그 컴포넌트가 또 어떤 다른 컴포넌트를 반환하고 있다면, 리액트는 그 컴포넌트를 다음으로 렌더링합니다. 이 프로세스는 더 이상 중첩된 컴포넌트가 없고, 리액트가 화면에 무엇이 표시되어야 하는지 정확히 알 때까지 계속됩니다.
 
-다음의 예시에서 리액트는 `App` 함수를 호출하고, `Paragraph` 함수를 여러 번 호출할 것입니다.
+다음의 예시에서 리액트는 `Article` 함수를 호출하고, `Paragraph` 함수를 여러 번 호출할 것입니다.
 
-```js
-import { createRoot } from "react-dom/client";
+<Sandpack
+  client:idle
+  files={{
+    "/App.js": Article,
+  }}
+/>
 
-const root = createRoot(document.getElementById("root"));
-root.render(<App />);
-
-function App() {
-  return (
-    <section>
-      <h1>Title</h1>
-      <Paragraph />
-      <Paragraph />
-      <Paragraph />
-    </section>
-  );
-}
-
-function Paragraph() {
-  return (
-    <p>
-      Lorem ipsum is placeholder text commonly used in the graphic, print, and
-      publishing industries for previewing layouts and visual mockups.
-    </p>
-  );
-}
-```
-
-- 초기 렌더링을 하는 동안, 리액트는 `<section>`, `<h1>`, 그리고 세 개의 `<p>` 태그에 대한 [DOM 노드를 생성](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)합니다.
+- 초기 렌더링을 하는 동안, 리액트는 `<article>`, `<h1>`, 그리고 세 개의 `<p>` 태그에 대한 [DOM 노드를 생성](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)합니다.
 - 리렌더링을 하는 동안, 리액트는 이전 렌더링 이후 변경된 속성이 있다면 그것이 어떤 속성인지 계산합니다. 그런데, 다음 단계인 커밋 단계가 될 때까지 그 정보를 가지고 아무 일도 하지는 않습니다.
 
 ### Step 3: React commits changes to the DOM
@@ -95,34 +77,14 @@ function Paragraph() {
 
 리액트는 렌더링 간에 차이가 있는 DOM 노드만을 변경합니다. 예를 들어, 매초 state가 업데이트되어 리렌더링하는 컴포넌트가 있습니다. `<input>` 에 어떤 텍스트를 추가하여 그것의 값을 업데이트할 수 있지만, 컴포넌트가 리렌더링될 때 그 텍스트가 사라지지 않는 것에 주목해 주세요.
 
-```js
-import { useState, useEffect } from "react";
+<Sandpack
+  client:idle
+  files={{
+    "/App.js": Clock,
+  }}
+/>
 
-function useTime() {
-  const [time, setTime] = useState(() => new Date());
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-    return () => clearInterval(id);
-  }, []);
-  return time;
-}
-
-export default function Clock() {
-  const time = useTime();
-  return (
-    <>
-      <p>{time.toLocaleTimeString()}</p>
-      <input />
-    </>
-  );
-}
-```
-
-<Clock client:idle />
-
-이 단계에서 리액트는 새로운 `time` 을 가지고 `<p>` 의 내용만 업데이트하기 때문에 이처럼 동작합니다. `<input>` 이 JSX에서 지난번과 같은 위치에 나타나는 것을 확인하기 때문에, 리액트는 `<input>` 또는 그 값을 건드리지 않습니다.
+이 단계에서 리액트는 새로운 `time` 을 가지고 `<h1>` 의 내용만 업데이트하기 때문에 이처럼 동작합니다. `<input>` 이 JSX에서 지난번과 같은 위치에 나타나는 것을 확인하기 때문에, 리액트는 `<input>` 또는 그 값을 건드리지 않습니다.
 
 ### Epilogue: Browser paint
 
