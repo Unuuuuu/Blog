@@ -14,7 +14,7 @@ date: 2023-02-03T21:07:15+09:00
 
 ### Related Posts
 
-- [사이트맵은 필요한가?](./do-i-need-a-sitemap)
+- [사이트맵은 필요한가?](/posts/do-i-need-a-sitemap)
 
 ### Resources
 

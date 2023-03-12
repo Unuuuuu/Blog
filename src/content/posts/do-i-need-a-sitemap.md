@@ -28,7 +28,7 @@ date: 2023-02-04T14:11:49+09:00
 
 ### Related Posts
 
-- [사이트맵은 무엇인가?](./what-is-a-sitemap)
+- [사이트맵은 무엇인가?](/posts/what-is-a-sitemap)
 
 ### Resources
 
