@@ -10,6 +10,7 @@ const postsCollection = defineCollection({
         z.literal("react"),
         z.literal("markdown"),
         z.literal("web"),
+        z.literal("data-structures-and-algorithms"),
       ]),
       date: z.date(),
     })

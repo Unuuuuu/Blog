@@ -1,12 +1,19 @@
 import type { CollectionEntry } from "astro:content";
 
-type DisplayName = "JavaScript" | "TypeScript" | "React" | "Markdown" | "Web";
+type DisplayName =
+  | "JavaScript"
+  | "TypeScript"
+  | "React"
+  | "Markdown"
+  | "Web"
+  | "Data Structures and Algorithms";
 type BgColor =
   | "bg-javascript"
   | "bg-typescript"
   | "bg-react"
   | "bg-markdown"
-  | "bg-web";
+  | "bg-web"
+  | "bg-data-structures-and-algorithms";
 
 export const getCategoryData = (
   category: CollectionEntry<"posts">["data"]["category"]
@@ -37,6 +44,10 @@ export const getCategoryData = (
     case "web":
       displayName = "Web";
       bgColor = "bg-web";
+      break;
+    case "data-structures-and-algorithms":
+      displayName = "Data Structures and Algorithms";
+      bgColor = "bg-data-structures-and-algorithms";
       break;
   }
 

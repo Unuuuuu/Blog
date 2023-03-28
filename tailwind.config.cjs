@@ -25,6 +25,7 @@ module.exports = {
         react: "#61DAFB",
         markdown: "#FCB32C",
         web: "#ffffff",
+        "data-structures-and-algorithms": "#2F8D46",
       },
       fontFamily: {
         sans: [
